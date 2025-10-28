@@ -41,6 +41,7 @@ jobs:
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
         with:
+          # https://elixirforum.com/t/rustler-precompiled-segfaults-in-gh-action/71189
           # toolchain: stable
           toolchain: 1.86.0
           target: ${{ matrix.job.target }}
