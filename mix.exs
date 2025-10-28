@@ -49,9 +49,9 @@ defmodule ExTypst.MixProject do
       licenses: ["Apache-2.0"],
       links: %{"GitHub" => @source_url},
       exclude_patterns: [
-        "priv/plts",
-        "native/extypst_nif/target",
-        "priv/native/libextypst_nif.so"
+        "priv/plts"
+        # "native/extypst_nif/target",
+        # "priv/native/libextypst_nif.so"
       ],
       files: [
         "lib",
