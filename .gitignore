@@ -25,4 +25,7 @@ ex_typst-*.tar
 # Temporary files, for example, from tests.
 /tmp/
 
+# Rust-related files
+priv/native/extypst_nif.so
 priv/native/libextypst_nif.so
+target/rust-analyzer/*
