@@ -15,18 +15,18 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        nif: ["2.15", "2.16"]
+        nif: ["2.16"]
         job:
           - { os: macos-12, target: aarch64-apple-darwin }
-          - { os: macos-12, target: x86_64-apple-darwin }
-          - { os: ubuntu-24.04, target: aarch64-unknown-linux-gnu, use-cross: true }
-          - { os: ubuntu-24.04, target: aarch64-unknown-linux-musl, use-cross: true }
-          - { os: ubuntu-24.04, target: arm-unknown-linux-gnueabihf, use-cross: true }
-          - { os: ubuntu-24.04, target: riscv64gc-unknown-linux-gnu, use-cross: true }
-          - { os: ubuntu-24.04, target: x86_64-unknown-linux-gnu }
-          - { os: ubuntu-24.04, target: x86_64-unknown-linux-musl, use-cross: true }
-          - { os: windows-2025, target: x86_64-pc-windows-gnu }
-          - { os: windows-2025, target: x86_64-pc-windows-msvc }
+          # - { os: macos-12, target: x86_64-apple-darwin }
+          # - { os: ubuntu-24.04, target: aarch64-unknown-linux-gnu, use-cross: true }
+          # - { os: ubuntu-24.04, target: aarch64-unknown-linux-musl, use-cross: true }
+          # - { os: ubuntu-24.04, target: arm-unknown-linux-gnueabihf, use-cross: true }
+          # - { os: ubuntu-24.04, target: riscv64gc-unknown-linux-gnu, use-cross: true }
+          # - { os: ubuntu-24.04, target: x86_64-unknown-linux-gnu }
+          # - { os: ubuntu-24.04, target: x86_64-unknown-linux-musl, use-cross: true }
+          # - { os: windows-2025, target: x86_64-pc-windows-gnu }
+          # - { os: windows-2025, target: x86_64-pc-windows-msvc }
 
     steps:
       - name: Checkout source code
@@ -48,12 +48,12 @@ jobs:
         id: build-crate
         uses: philss/rustler-precompiled-action@v1.0.1
         with:
-          project-name: example
+          project-name: ex_typst_nif
           project-version: ${{ env.PROJECT_VERSION }}
           target: ${{ matrix.job.target }}
           nif-version: ${{ matrix.nif }}
           use-cross: ${{ matrix.job.use-cross }}
-          project-dir: "native/example"
+          project-dir: "native/ex_typst_nif"
 
       - name: Artifact upload
         uses: actions/upload-artifact@v4
