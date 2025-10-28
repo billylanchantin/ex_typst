@@ -120,7 +120,7 @@ impl SystemWorld {
         }
     }
 
-    fn slot(&self, path: &Path) -> FileResult<RefMut<PathSlot>> {
+    fn slot(&self, path: &Path) -> FileResult<RefMut<'_, PathSlot>> {
         let mut hashes = self.hashes.borrow_mut();
         let hash = match hashes.get(path).cloned() {
             Some(hash) => hash,
@@ -334,4 +334,4 @@ fn compile<'a>(markup: String, extra_fonts: Vec<String>) -> Result<String, Strin
     result
 }
 
-rustler::init!("Elixir.ExTypst.NIF", [compile]);
+rustler::init!("Elixir.ExTypst.NIF");
