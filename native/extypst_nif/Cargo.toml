@@ -10,7 +10,7 @@ path = "src/lib.rs"
 crate-type = ["cdylib"]
 
 [dependencies]
-rustler = { version = "0.37", default-features = false, features = ["derive", "nif_version_2_16"] }
+rustler = { version = "0.37", default-features = false, features = ["derive", "nif_version_2_17"] }
 typst = { git = "https://github.com/typst/typst" }
 typst-library = { git = "https://github.com/typst/typst.git" }
 
