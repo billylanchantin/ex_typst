@@ -314,11 +314,10 @@ impl FontSearcher {
     }
 }
 
-
 #[rustler::nif]
 fn compile<'a>(markup: String, extra_fonts: Vec<String>) -> Result<String, String> {
     let extra_fonts_paths: Vec<PathBuf> = extra_fonts.iter().map(|f| Path::new(f).into()).collect();
-   
+
     let mut world = SystemWorld::new(".".into(), extra_fonts_paths.as_slice(), &[]);
     let result = match world.compile(markup) {
         Ok(pdf_bytes) => {
@@ -327,8 +326,8 @@ fn compile<'a>(markup: String, extra_fonts: Vec<String>) -> Result<String, Strin
             unsafe {
                 return Ok(String::from_utf8_unchecked(pdf_bytes));
             }
-        },
-        Err(e) => Err(e.into())
+        }
+        Err(e) => Err(e.into()),
     };
 
     result
