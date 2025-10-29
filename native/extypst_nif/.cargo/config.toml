@@ -5,7 +5,11 @@ rustflags = [
 ]
 
 # See https://github.com/rust-lang/rust/issues/59302
-[target.x86_64-unknown-linux-musl]
+[target.'cfg(target_os = "linux", target_env = "musl")']
+rustflags = [
+  "-C", "target-feature=-crt-static"
+]
+
 rustflags = [
   "-C", "target-feature=-crt-static"
 ]
