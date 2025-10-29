@@ -56,6 +56,7 @@ defmodule ExTypst.MixProject do
       files: [
         "lib",
         "native",
+        "checksum-*.exs",
         "priv/native",
         "priv/fonts",
         ".formatter.exs",
