@@ -4,7 +4,7 @@ defmodule ExTypst.NIF do
   mix_config = Mix.Project.config()
   version = mix_config[:version]
   # tag = "v#{version}"
-  tag = "rustler-precompiled-test-5"
+  tag = "rustler-precompiled-test-6"
   # github_url = mix_config[:package][:links]["GitHub"]
   github_url = "https://github.com/billylanchantin/ex_typst"
   # Since Rustler 0.27.0, we need to change manually the mode for each env.
