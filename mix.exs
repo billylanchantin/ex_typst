@@ -1,7 +1,7 @@
 defmodule ExTypst.MixProject do
   use Mix.Project
 
-  @source_url "https://github.com/viniciusmuller/ex_typst"
+  @source_url "https://github.com/billylanchantin/ex_typst/tree/rustler-precompiled-cargosense"
   @version "0.1.3"
 
   def project do
@@ -50,14 +50,12 @@ defmodule ExTypst.MixProject do
       links: %{"GitHub" => @source_url},
       exclude_patterns: [
         "priv/plts",
-        "native/extypst_nif/target",
-        "priv/native/libextypst_nif.so"
+        "native/extypst_nif/target"
       ],
       files: [
         "lib",
         "native",
         "checksum-*.exs",
-        "priv/native",
         "priv/fonts",
         ".formatter.exs",
         "README.md",
