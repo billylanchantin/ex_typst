@@ -26,6 +26,6 @@ ex_typst-*.tar
 /tmp/
 
 # Rust-related files
-priv/native/extypst_nif.so
-priv/native/libextypst_nif.so
+priv/native/extypst_nif*.so
+priv/native/libextypst_nif*.so
 target/rust-analyzer/*
