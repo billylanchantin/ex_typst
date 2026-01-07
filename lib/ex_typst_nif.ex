@@ -11,7 +11,6 @@ defmodule ExTypst.NIF do
   # We want "debug" in dev and test because it's faster to compile.
   mode = if Mix.env() in [:dev, :test], do: :debug, else: :release
 
-  # use Rustler, otp_app: :ex_typst, crate: "extypst_nif"
   use RustlerPrecompiled,
     otp_app: :ex_typst,
     crate: "extypst_nif",
