@@ -63,7 +63,8 @@ defmodule ExTypst.MixProject do
         "README.md",
         "LICENSE",
         "mix.exs"
-      ]
+      ],
+      organization: "cargosenseinternal"
     ]
   end
 end
